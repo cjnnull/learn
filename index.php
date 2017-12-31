@@ -1,0 +1,44 @@
+<?php 
+	$arrout=array(1,5,7,6,9,10,11,13,14,21,23,25,26,27,31,33);
+	$arr=array(
+		1=>array(1,2,3,4),
+		2=>array(5,6,7,8),
+		3=>array(9,10,11,12),
+		4=>array(13,14,15),
+		5=>array(16,17,18),
+		6=>array(19,20,21),
+		7=>array(22,23,24),
+		8=>array(25,26,27),
+		9=>array(28,29,30),
+		10=>array(31,32,33)
+	);
+	$arrv=array();
+	$i=0;
+	for($i;$i<33;){
+		$k=mt_rand(1,10);
+		if(count($arr[$k])>0){
+			$val=array_pop($arr[$k]);
+			$arrv[]=$val;
+		}
+		$i=count($arrv);
+	}
+	$endarr=array();
+	for($i=0;$i<6;){
+		shuffle($arrv);
+		$len=count($arrv)-1;
+		$k=mt_rand(0,$len);
+		$v=$arrv[$k];
+		if(in_array($v,$arrout)){
+			unset($arrv[$k]);
+		}else{
+			$endarr[]=$v;
+			unset($arrv[$k]);
+		}
+		$i=count($endarr);
+	}
+	//sort($endarr);
+	$endarr['蓝']=rand(1,16);
+	var_dump($endarr);
+	
+
+?>
