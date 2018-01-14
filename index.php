@@ -36,7 +36,7 @@
 		}
 		$i=count($endarr);
 	}
-	//sort($endarr);
+	sort($endarr);
 	$endarr['蓝']=rand(1,16);
 	//var_dump($endarr);
 	
